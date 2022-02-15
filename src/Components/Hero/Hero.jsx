@@ -23,10 +23,10 @@ const Hero = () => {
             className="rounded-3 mt-4 p-4"
           >
             <Row>
-              <Col xs={6} className="mt-2">
+              <Col md={6} className="mt-2">
                 <img src={certikLogo} alt="" />
               </Col>
-              <Col xs={6} style={{ textAlign: "right" }}>
+              <Col md={6} style={{ textAlign: "right" }}>
                 <Button className="p-3">
                   <AiOutlineEye /> Buy On Uniswap
                 </Button>
