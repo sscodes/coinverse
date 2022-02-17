@@ -1,0 +1,24 @@
+a.p-1 {
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+a.p-1:hover {
+  border: 1px solid blue;
+  background-color: blue;
+  color: aliceblue;
+}
+
+.fifth-card.card-body {
+  padding: 0 0 0 0 !important;
+}
+
+.card {
+  background-color: #1f1f1f !important;
+  /* border: 1px solid white; */
+}
+
+img.card-img-top.mb-3 {
+  border-radius: 50%;
+}

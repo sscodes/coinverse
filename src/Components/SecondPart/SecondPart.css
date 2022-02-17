@@ -20,3 +20,11 @@ input {
   text-align: center;
   color: blue !important;
 }
+
+button.p-4.copy-btn.btn.btn-primary {
+  width: 200px;
+}
+
+button.p-4.copy-btn.btn.btn-success {
+  width: 200px;
+}

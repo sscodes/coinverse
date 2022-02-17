@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand.navbar-light {
+nav.border-bottom.border-white.navbar.navbar-expand-lg.navbar-dark.sticky-top {
   background-color: #101010 !important;
 }
 
@@ -6,14 +6,22 @@ nav.navbar.navbar-expand.navbar-light {
   border: white 2px solid;
 }
 
-.navbar-light .navbar-brand {
-  color: blue !important;
-  font-size: 2rem;
+a.navbar-brand {
+  color: white !important;
+  font-size: 2.5rem;
   font-weight: 700;
+}
+
+.navLinks:hover {
+  color: white !important;
 }
 
 a#navbarScrollingDropdown {
   color: blue !important;
+}
+
+a#navbarScrollingDropdown:hover {
+  color: white !important;
 }
 
 .dropdown-menu.show {

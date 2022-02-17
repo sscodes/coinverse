@@ -1,0 +1,11 @@
+span.title-bck-name {
+  font-size: 7rem;
+  font-weight: 700;
+  color: blue;
+}
+
+h2.title-bck-name {
+  color: white;
+  position: relative;
+  top: 110px;
+}

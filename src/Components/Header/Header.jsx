@@ -19,6 +19,7 @@ const Header = () => {
         expand="lg"
         className="border-bottom border-white"
         variant="dark"
+        sticky="top"
       >
         <Container>
           <Navbar.Brand href="#home">
@@ -38,10 +39,11 @@ const Header = () => {
                 href="#home"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 Home
               </Nav.Link>
@@ -49,10 +51,11 @@ const Header = () => {
                 href="#about"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 About
               </Nav.Link>
@@ -60,10 +63,11 @@ const Header = () => {
                 href="#guide"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 Guide
               </Nav.Link>
@@ -71,10 +75,11 @@ const Header = () => {
                 href="#team"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 Team
               </Nav.Link>
@@ -82,10 +87,11 @@ const Header = () => {
                 href="#howitworks"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 How it works
               </Nav.Link>
@@ -93,10 +99,11 @@ const Header = () => {
                 href="#roadmap"
                 style={{
                   color: "blue",
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
+                className="navLinks"
               >
                 Roadmap
               </Nav.Link>
@@ -104,7 +111,7 @@ const Header = () => {
                 title={lang}
                 id="navbarScrollingDropdown"
                 style={{
-                  marginTop: "10px",
+                  // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
                 }}
@@ -131,7 +138,12 @@ const Header = () => {
                 <NavDropdown.Item>🇺🇦 Ukranian</NavDropdown.Item>
                 <NavDropdown.Item>🇻🇳 Vietnamese</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#buynow" style={{ fontSize: "18px" }}>
+              <Nav.Link
+                href="https://shibnobi.com/#earn"
+                style={{ fontSize: "18px" }}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button>Buy Now</Button>
               </Nav.Link>
             </Navbar.Collapse>

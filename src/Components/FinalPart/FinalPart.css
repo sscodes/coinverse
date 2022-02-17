@@ -1,0 +1,16 @@
+.final-icons {
+  border: 1px solid white;
+  font-size: 2rem;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.final-icons:hover {
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    transition: all ease 0.4s;
+}

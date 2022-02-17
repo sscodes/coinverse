@@ -1,0 +1,24 @@
+a.tel-links {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.mod-head {
+  color: white;
+}
+
+.text-center.modal-body {
+  background-color: #101010;
+  border-right: 1px solid white;
+}
+
+.modal-header {
+  background-color: #101010;
+  border-right: 1px solid white;
+}
+
+button.btn-close {
+  background: url("../../../Assets/modal-cross.png") center/1em auto no-repeat !important;
+  border: 2px solid white;
+  border-radius: 50%;
+}

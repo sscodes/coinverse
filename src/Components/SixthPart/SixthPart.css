@@ -1,0 +1,8 @@
+.text-center.card {
+  height: 250px;
+}
+
+.sixth-card-body.card-body {
+  display: flex;
+  align-items: center;
+}
