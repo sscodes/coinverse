@@ -3,7 +3,7 @@ import "./SixthPart.css";
 
 const SixthPart = () => {
   return (
-    <Container className="py-5">
+    <Container className="py-5" id="section 5">
       <Row className="py-5">
         <Col xs={12} className="pb-5">
           <h1 style={{ color: "white" }}>How It Works</h1>

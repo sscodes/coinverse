@@ -12,7 +12,7 @@ import "./FourthPart.css";
 
 const FourthPart = () => {
   return (
-    <Container className="my-5">
+    <Container className="my-5"  id="section 3">
       <Row>
         <Col xs={12}>
           <div class="head-title-box">

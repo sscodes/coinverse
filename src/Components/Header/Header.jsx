@@ -1,16 +1,25 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, animateScroll } from "react-scroll";
 import logo from "../../Assets/logo.jpeg";
 import "./Header.css";
 
 const Header = () => {
   // eslint-disable-next-line no-unused-vars
-  const [lang, setLang] = useState("🇺🇸 English");
+  const [lang, setLang] = localStorage.lang
+    ? useState(localStorage.lang)
+    : useState("🇺🇸 English");
 
-  //   const changeLang = (lang) => {
-  //     setLang(lang);
-  //   };
+  const changeLang = (e) => {
+    setLang(e.target.text);
+    localStorage.setItem("lang", e.target.text);
+  };
+
+  const scrollToTop = () => {
+    animateScroll.scrollToTop();
+  };
 
   return (
     <>
@@ -22,7 +31,7 @@ const Header = () => {
         sticky="top"
       >
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand onClick={scrollToTop}>
             <img
               src={logo}
               alt=""
@@ -35,8 +44,13 @@ const Header = () => {
           <Nav>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav.Link
-                href="#home"
+              <Link
+                activeClass="active"
+                to="section 1"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -46,9 +60,14 @@ const Header = () => {
                 className="navLinks"
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
-                href="#about"
+              </Link>
+              <Link
+                activeClass="active"
+                to="section 2"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -58,9 +77,14 @@ const Header = () => {
                 className="navLinks"
               >
                 About
-              </Nav.Link>
-              <Nav.Link
-                href="#guide"
+              </Link>
+              <Link
+                activeClass="active"
+                to="section 3"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -70,9 +94,14 @@ const Header = () => {
                 className="navLinks"
               >
                 Guide
-              </Nav.Link>
-              <Nav.Link
-                href="#team"
+              </Link>
+              <Link
+                activeClass="active"
+                to="section 4"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -82,9 +111,14 @@ const Header = () => {
                 className="navLinks"
               >
                 Team
-              </Nav.Link>
-              <Nav.Link
-                href="#howitworks"
+              </Link>
+              <Link
+                activeClass="active"
+                to="section 5"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -94,9 +128,14 @@ const Header = () => {
                 className="navLinks"
               >
                 How it works
-              </Nav.Link>
-              <Nav.Link
-                href="#roadmap"
+              </Link>
+              <Link
+                activeClass="active"
+                to="section 6"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
                 style={{
                   color: "blue",
                   // marginTop: "10px",
@@ -106,7 +145,7 @@ const Header = () => {
                 className="navLinks"
               >
                 Roadmap
-              </Nav.Link>
+              </Link>
               <NavDropdown
                 title={lang}
                 id="navbarScrollingDropdown"
@@ -116,36 +155,81 @@ const Header = () => {
                   fontSize: "18px",
                 }}
               >
-                <NavDropdown.Item>🇦🇪 Arabic</NavDropdown.Item>
-                <NavDropdown.Item>🇨🇳 Chinese</NavDropdown.Item>
-                <NavDropdown.Item>🇳🇱 Dutch</NavDropdown.Item>
-                <NavDropdown.Item>🇺🇸 English</NavDropdown.Item>
-                <NavDropdown.Item>🇫🇷 French</NavDropdown.Item>
-                <NavDropdown.Item>🇩🇪 German</NavDropdown.Item>
-                <NavDropdown.Item>🇮🇳 Hindi</NavDropdown.Item>
-                <NavDropdown.Item>🇮🇩 Indonesian</NavDropdown.Item>
-                <NavDropdown.Item>🇮🇹 Italian</NavDropdown.Item>
-                <NavDropdown.Item>🇯🇵 Japanese</NavDropdown.Item>
-                <NavDropdown.Item>🇰🇷 Korean</NavDropdown.Item>
-                <NavDropdown.Item>🇻🇦 Latin</NavDropdown.Item>
-                <NavDropdown.Item>🇳🇵 Nepali</NavDropdown.Item>
-                <NavDropdown.Item>🇮🇷 Persian</NavDropdown.Item>
-                <NavDropdown.Item>🇵🇹 Portuguese</NavDropdown.Item>
-                <NavDropdown.Item>🇷🇺 Russian</NavDropdown.Item>
-                <NavDropdown.Item>🇸🇰 Slovak</NavDropdown.Item>
-                <NavDropdown.Item>🇪🇸 Spanish</NavDropdown.Item>
-                <NavDropdown.Item>🇹🇷 Turkish</NavDropdown.Item>
-                <NavDropdown.Item>🇺🇦 Ukranian</NavDropdown.Item>
-                <NavDropdown.Item>🇻🇳 Vietnamese</NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇦🇪 Arabic
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇨🇳 Chinese
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇳🇱 Dutch
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇺🇸 English
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇫🇷 French
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇩🇪 German
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇮🇳 Hindi
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇮🇩 Indonesian
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇮🇹 Italian
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇯🇵 Japanese
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇰🇷 Korean
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇻🇦 Latin
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇳🇵 Nepali
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇮🇷 Persian
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇵🇹 Portuguese
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇷🇺 Russian
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇸🇰 Slovak
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇪🇸 Spanish
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇹🇷 Turkish
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇺🇦 Ukranian
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={changeLang}>
+                  🇻🇳 Vietnamese
+                </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link
-                href="https://shibnobi.com/#earn"
+              <Link
                 style={{ fontSize: "18px" }}
-                target="_blank"
-                rel="noreferrer"
+                activeClass="active"
+                to="section 7"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={100}
               >
                 <Button>Buy Now</Button>
-              </Nav.Link>
+              </Link>
             </Navbar.Collapse>
           </Nav>
         </Container>

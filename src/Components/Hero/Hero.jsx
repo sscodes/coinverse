@@ -6,7 +6,7 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
-    <Container className="py-5">
+    <Container className="py-5" id="section 1">
       <Row>
         <Col className="py-5" style={{ textAlign: "left" }}>
           <h1 style={{ color: "blue", fontSize: "4rem" }}>COINVERSE</h1>

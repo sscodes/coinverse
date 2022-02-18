@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const FirstPart = () => {
   return (
-    <Container className="py-5">
+    <Container className="py-5" id="section 7">
       <Row>
         <Col xs={12} className="pb-5">
           <h2 style={{ color: "blue" }}>Mission Statement</h2>

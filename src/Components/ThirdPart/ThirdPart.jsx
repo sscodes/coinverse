@@ -3,7 +3,7 @@ import pic1 from "../../Assets/bc.png";
 
 const ThirdPart = () => {
   return (
-    <Container className="py-5" style={{ color: "blue" }}>
+    <Container className="py-5" style={{ color: "blue" }} id="section 2">
       <Row>
         <Col xs={12} className="pb-5">
           <h1 style={{ color: "white" }} className="pb-2">
