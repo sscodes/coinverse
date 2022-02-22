@@ -1,0 +1,15 @@
+.articles-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.articles-button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid blue;
+  text-align: left;
+  color: blue;
+  margin: 3px;
+}

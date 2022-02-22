@@ -1,0 +1,24 @@
+.css-1wybm3g-Circle:not(.using-icon).active::after {
+  background-color: white !important;
+}
+
+.css-1lcdd13-TitleWrapper.active {
+  background-color: white !important;
+}
+
+p.css-lvrawd-TimelineContentDetails.emk90bu6 {
+  color: blue !important;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 500px;
+}
+
+span.css-oq6549-TimelineSubContent.emk90bu5 {
+  padding-bottom: 5px;
+}
+
+section.timeline-card-content.active.css-1ywt96b-TimelineItemContentWrapper.emk90bu10 {
+  background-color: #101010 !important;
+  /* border: 2px solid white !important; */
+  border-radius: 5px;
+}
