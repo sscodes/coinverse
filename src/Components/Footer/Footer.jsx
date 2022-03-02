@@ -7,18 +7,12 @@ const Footer = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link href="https://bscscan.io/token/0xab167e816e4d76089119900e941befdfa37d6b32">
+            <Nav.Link href="https://www.bscscan.com/address/0x00cBd38FC4c2532c428Da9AAe68e289948561F80">
               Bscscan
             </Nav.Link>
-            <Nav.Link href="https://www.coingecko.com/en/coins/shibnobi">
-              CoinGecko
-            </Nav.Link>
-            <Nav.Link href="https://coinmarketcap.com/currencies/shibnobi/">
-              CoinMarketCap
-            </Nav.Link>
-            <Nav.Link href="https://shibnobi.zendesk.com/hc/en-us">
-              FAQ
-            </Nav.Link>
+            <Nav.Link href="">CoinGecko</Nav.Link>
+            <Nav.Link href="">CoinMarketCap</Nav.Link>
+            <Nav.Link href="">FAQ</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

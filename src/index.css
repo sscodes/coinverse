@@ -24,10 +24,10 @@ code {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: blue;
+  background: #32b697;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(0, 0, 170);
+  background: #15755f;
 }

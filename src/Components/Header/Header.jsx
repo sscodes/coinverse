@@ -52,7 +52,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
@@ -69,7 +69,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
@@ -86,7 +86,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
@@ -103,7 +103,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
@@ -120,7 +120,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",
@@ -137,7 +137,7 @@ const Header = () => {
                 offset={-70}
                 duration={100}
                 style={{
-                  color: "blue",
+                  color: "#32b697",
                   // marginTop: "10px",
                   marginRight: "4px",
                   fontSize: "18px",

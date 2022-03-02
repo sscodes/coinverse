@@ -9,8 +9,8 @@
 }
 
 .final-icons:hover {
-    border: 1px solid blue;
-    background-color: blue;
+    border: 1px solid #32b697;
+    background-color: #32b697;
     color: white;
     transition: all ease 0.4s;
 }

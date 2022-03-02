@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.btn-primary {
+  background-color: #32b697 !important;
+  border-color: #32b697 !important;
+}
+
+a {
+  color: #32b697 !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

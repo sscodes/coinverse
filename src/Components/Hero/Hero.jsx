@@ -9,11 +9,11 @@ const Hero = () => {
     <Container className="py-5" id="section 1">
       <Row>
         <Col className="py-5" style={{ textAlign: "left" }}>
-          <h1 style={{ color: "blue", fontSize: "4rem" }}>COINVERSE</h1>
+          <h1 style={{ color: "#32b697", fontSize: "4rem" }}>COINVERSE</h1>
           <h2 style={{ color: "white" }}>
             An financial Token working on Web 3.0!
           </h2>
-          <p style={{ color: "blue" }}>
+          <p style={{ color: "#32b697" }}>
             Coinverse (CVS) is an innovative deflationary Token aiming to
             revolutionise defi,building it's own blockchain , we will introduce
             a multichain swap across etherum, binance,cardano, and polygon.
@@ -37,8 +37,9 @@ const Hero = () => {
                 <img src={certikLogo} alt="" />
               </Col>
               <Col md={6} style={{ textAlign: "right" }}>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
-                  href="https://www.certik.com/projects/shibnobi"
+                  href=""
                   className="hero-btn"
                   target="_blank"
                   rel="noreferrer"

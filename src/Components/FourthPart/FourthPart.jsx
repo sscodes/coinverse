@@ -39,7 +39,7 @@ const FourthPart = () => {
                 <Typography variant="h6" component="span">
                   Create wallet
                 </Typography>
-                <Typography style={{ color: "blue" }}>
+                <Typography style={{ color: "#32b697" }}>
                   Create a MetaMask or Trust Wallet using either a desktop
                   computer or an iOS/Android mobile device. That will allow you
                   to buy, sell, send, and receive Coinverse (CVS)
@@ -59,7 +59,7 @@ const FourthPart = () => {
                 <Typography variant="h6" component="span">
                   Send BNB to your wallet
                 </Typography>
-                <Typography style={{ color: "blue" }}>
+                <Typography style={{ color: "#32b697" }}>
                   You can buy Binance (bnb) directly on MetaMask / Trust wallet
                   or transfer it to your Wallet from exchanges like Coinbase,
                   Binance, etc.
@@ -79,7 +79,7 @@ const FourthPart = () => {
                 <Typography variant="h6" component="span">
                   Connect your wallet to Pancakeswap
                 </Typography>
-                <Typography style={{ color: "blue" }}>
+                <Typography style={{ color: "#32b697" }}>
                   Access your wallet to Pancakeswap by clicking ‘Connect to a
                   wallet’ and selecting Coinverse by the Contract Address
                 </Typography>
@@ -98,7 +98,7 @@ const FourthPart = () => {
                 <Typography variant="h6" component="span">
                   Swap Binance (bnb) for Coinverse
                 </Typography>
-                <Typography style={{ color: "blue" }}>
+                <Typography style={{ color: "#32b697" }}>
                   You can start swapping as soon as you have BNB available!
                   Press ‘Select a token’ and enter the token address Coinverse
                 </Typography>

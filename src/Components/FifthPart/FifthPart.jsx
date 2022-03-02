@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "bootstrap/dist/css/bootstrap.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -11,7 +12,7 @@ const FifthPart = () => {
       <Row>
         <Col xs={12} className="pb-5">
           <h1 style={{ color: "white" }}>Meet Our Team</h1>
-          <h6 style={{ color: "blue" }}>
+          <h6 style={{ color: "#32b697" }}>
             A strong and clear team makes transparency and credibility the
             biggest investment.
           </h6>
@@ -29,15 +30,15 @@ const FifthPart = () => {
                 <h3 style={{ color: "white" }}>Richie Ekong</h3>
               </Card.Title>
               <Card.Text>
-                <h6 style={{ color: "blue" }}> CEO/Developer</h6>
+                <h6 style={{ color: "#32b697" }}> CEO/Developer</h6>
               </Card.Text>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09" className="mx-2 p-1">
                 <AiOutlineTwitter />
               </a>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="https://t.me/Coinverseofficialcommunity" className="mx-2 p-1">
                 <FaTelegramPlane />
               </a>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="" className="mx-2 p-1">
                 <FaLinkedin />
               </a>
             </Card.Body>
@@ -56,15 +57,15 @@ const FifthPart = () => {
                 <h3 style={{ color: "white" }}>Richie Ekong</h3>
               </Card.Title>
               <Card.Text>
-                <h6 style={{ color: "blue" }}> CEO/Developer</h6>
+                <h6 style={{ color: "#32b697" }}>Co-founder</h6>
               </Card.Text>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09" className="mx-2 p-1">
                 <AiOutlineTwitter />
               </a>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="https://t.me/Coinverseofficialcommunity" className="mx-2 p-1">
                 <FaTelegramPlane />
               </a>
-              <a href="https://twitter.com/Free_Patriot76" className="mx-2 p-1">
+              <a href="" className="mx-2 p-1">
                 <FaLinkedin />
               </a>
             </Card.Body>

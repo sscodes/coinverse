@@ -7,7 +7,7 @@
 }
 
 p.css-lvrawd-TimelineContentDetails.emk90bu6 {
-  color: blue !important;
+  color: #32b697 !important;
   font-size: 1.5rem;
   text-align: center;
   width: 500px;
@@ -21,4 +21,24 @@ section.timeline-card-content.active.css-1ywt96b-TimelineItemContentWrapper.emk9
   background-color: #101010 !important;
   /* border: 2px solid white !important; */
   border-radius: 5px;
+}
+
+.css-zwbpy4-Outline.e1gmwefz2 {
+  background-color: #32b697 !important;
+}
+
+.timeline-circle.horizontal.in-active.css-1wybm3g-Circle.e5foh872 {
+  background-color: #32b697 !important;
+}
+
+.timeline-circle.horizontal.active.css-1wybm3g-Circle.e5foh872 {
+  background-color: #32b697 !important;
+}
+
+.timeline-item-title.active.css-1lcdd13-TitleWrapper.ergoa4r0 {
+  color: #32b697 !important;
+}
+
+button.css-1huqcnp-TimelineNavButton.e1fht2ox4 {
+  background-color: #32b697 !important;
 }

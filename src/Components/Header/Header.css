@@ -29,7 +29,7 @@ nav.border-bottom.border-white.navbar.navbar-expand-lg.navbar-dark.sticky-top {
 }
 
 a#navbarScrollingDropdown {
-  color: blue !important;
+  color: #32b697 !important;
 }
 
 a#navbarScrollingDropdown:hover {
@@ -48,11 +48,11 @@ a#navbarScrollingDropdown:hover {
 }
 
 a.dropdown-item {
-  color: blue !important;
+  color: #32b697 !important;
   background-color: #101010;
 }
 
 a.dropdown-item::hover {
-  color: blue !important;
+  color: #32b697 !important;
   background-color: #101010;
 }

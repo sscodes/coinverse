@@ -12,7 +12,7 @@ const TelegramModal = (props) => {
       <Modal.Header closeButton>
         <Modal.Title id="example-modal-sizes-title-sm">
           <h2 className="mod-head">
-            <b>International Telegrams</b>
+            <b>Telegrams Links</b>
           </h2>
         </Modal.Title>
       </Modal.Header>
@@ -20,31 +20,21 @@ const TelegramModal = (props) => {
         <h5 className="my-3">
           <a
             target="_blank"
-            href="https://t.me/ShibnobiCommunity"
+            href="https://t.me/Coinverseofficialcommunity"
             rel="noreferrer"
             className="tel-links"
           >
-            Official Global Community{" "}
+            Official Telegram Community{" "}
           </a>
         </h5>
         <h5 className="my-3">
           <a
             target="_blank"
-            href="https://t.me/ShibnobiArabicCommunity"
+            href="https://t.me/Coinversecommunity"
             rel="noreferrer"
             className="tel-links"
           >
-            Shibnobi Arabic Community
-          </a>
-        </h5>
-        <h5 className="my-3">
-          <a
-            target="_blank"
-            href="https://t.me/ShibnobiAnnouncements"
-            rel="noreferrer"
-            className="tel-links"
-          >
-            Shibnobi Announcements
+            Coinverse Announcements
           </a>
         </h5>
       </Modal.Body>

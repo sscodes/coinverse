@@ -12,18 +12,27 @@ const FinalPart = () => {
           <h1 style={{ color: "white" }}>Social Share</h1>
         </Col>
         <Col xs={12} className="py-5">
-          <a href="https://twitter.com/Coinverse3" className="final-icons">
+          <a
+            href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09"
+            className="final-icons"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiOutlineTwitter />
           </a>
           <a
             href="https://t.me/Coinverseofficialcommunity"
             className="final-icons"
+            target="_blank"
+            rel="noreferrer"
           >
             <FaTelegramPlane />
           </a>
           <a
-            href="https://www.instagram.com/coin.verseofficial/"
+            href="https://instagram.com/coin.verseofficial/"
             className="final-icons"
+            target="_blank"
+            rel="noreferrer"
           >
             <AiOutlineInstagram />
           </a>

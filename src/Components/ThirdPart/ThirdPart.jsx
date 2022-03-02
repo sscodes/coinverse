@@ -3,7 +3,7 @@ import pic1 from "../../Assets/bc.png";
 
 const ThirdPart = () => {
   return (
-    <Container className="py-5" style={{ color: "blue" }} id="section 2">
+    <Container className="py-5" style={{ color: "#32b697" }} id="section 2">
       <Row>
         <Col xs={12} className="pb-5">
           <h1 style={{ color: "white" }} className="pb-2">
@@ -67,7 +67,7 @@ const ThirdPart = () => {
                     <b style={{ color: "white" }}>Coinverse:</b> Enter the
                     Coinverse virtual reality Metaverse. When the user arrives
                     they will find themselves on the DojoDisc. From there, the
-                    user will be able to explore all things #ShibnobiStyle and
+                    user will be able to explore all things #CoinverseStyle and
                     find directories of establishments on other discs in the
                     Dojoverse.
                   </p>
