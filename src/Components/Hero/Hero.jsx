@@ -19,7 +19,7 @@ const Hero = () => {
             a multichain swap across etherum, binance,cardano, and polygon.
           </p>
           <a
-            href="https://app.uniswap.org/#/swap?outputCurrency=0xab167e816e4d76089119900e941befdfa37d6b32"
+            href="https://pancakeswap.finance/add/0x00cBd38FC4c2532c428Da9AAe68e289948561F80/BNB"
             className="hero-btn"
             target="_blank"
             rel="noreferrer"

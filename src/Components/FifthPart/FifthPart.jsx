@@ -27,7 +27,7 @@ const FifthPart = () => {
             <Card.Img variant="top" src={people} className="mb-3" />
             <Card.Body className="fifth-card">
               <Card.Title>
-                <h3 style={{ color: "white" }}>Richie Ekong</h3>
+                <h3 style={{ color: "white" }}>Milan Chandra</h3>
               </Card.Title>
               <Card.Text>
                 <h6 style={{ color: "#32b697" }}> CEO/Developer</h6>
@@ -54,7 +54,7 @@ const FifthPart = () => {
             <Card.Img variant="top" src={people} className="mb-3" />
             <Card.Body className="fifth-card">
               <Card.Title>
-                <h3 style={{ color: "white" }}>Richie Ekong</h3>
+                <h3 style={{ color: "white" }}>Milan Chandra</h3>
               </Card.Title>
               <Card.Text>
                 <h6 style={{ color: "#32b697" }}>Co-founder</h6>

@@ -2,6 +2,7 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
+import WhitePaper from "../../Assets/COINVERSEWHITEPAPER.pdf";
 import "./FinalPart.css";
 
 const FinalPart = () => {
@@ -46,7 +47,9 @@ const FinalPart = () => {
                   <h3 style={{ color: "white" }}>White Paper - 2021</h3>
                 </Col>
                 <Col xs={12} className="mt-5">
-                  <Button size="lg">Download</Button>
+                  <a href={WhitePaper} target="_blank" rel="noreferrer">
+                    <Button size="lg">Download</Button>
+                  </a>
                 </Col>
               </Row>
             </Card.Body>
