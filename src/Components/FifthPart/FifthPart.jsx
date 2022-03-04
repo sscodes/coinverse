@@ -27,15 +27,21 @@ const FifthPart = () => {
             <Card.Img variant="top" src={people} className="mb-3" />
             <Card.Body className="fifth-card">
               <Card.Title>
-                <h3 style={{ color: "white" }}>Milan Chandra</h3>
+                <h3 style={{ color: "white" }}>Richie Ekong</h3>
               </Card.Title>
               <Card.Text>
                 <h6 style={{ color: "#32b697" }}> CEO/Developer</h6>
               </Card.Text>
-              <a href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09" className="mx-2 p-1">
+              <a
+                href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09"
+                className="mx-2 p-1"
+              >
                 <AiOutlineTwitter />
               </a>
-              <a href="https://t.me/Coinverseofficialcommunity" className="mx-2 p-1">
+              <a
+                href="https://t.me/Coinverseofficialcommunity"
+                className="mx-2 p-1"
+              >
                 <FaTelegramPlane />
               </a>
               <a href="" className="mx-2 p-1">
@@ -59,10 +65,16 @@ const FifthPart = () => {
               <Card.Text>
                 <h6 style={{ color: "#32b697" }}>Co-founder</h6>
               </Card.Text>
-              <a href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09" className="mx-2 p-1">
+              <a
+                href="https://twitter.com/Coinverse3?t=8D-m4aFKA3nWPwdelIoc7w&s=09"
+                className="mx-2 p-1"
+              >
                 <AiOutlineTwitter />
               </a>
-              <a href="https://t.me/Coinverseofficialcommunity" className="mx-2 p-1">
+              <a
+                href="https://t.me/Coinverseofficialcommunity"
+                className="mx-2 p-1"
+              >
                 <FaTelegramPlane />
               </a>
               <a href="" className="mx-2 p-1">

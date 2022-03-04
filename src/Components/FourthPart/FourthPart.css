@@ -1,11 +1,12 @@
 span.title-bck-name {
-  font-size: 7rem;
+  font-size: 7vw;
   font-weight: 700;
   color: rgb(90, 180, 159);
 }
 
 h2.title-bck-name {
+  font-size: 2vw;
   color: white;
   position: relative;
-  top: 110px;
+  top: 7vw;
 }

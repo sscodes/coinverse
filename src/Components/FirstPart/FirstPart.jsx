@@ -12,19 +12,19 @@ const FirstPart = () => {
             community and vetted projects
           </p>
         </Col>
-        <Col md={6}>
+        <Col lg={6} className="pt-3">
           <h5 style={{ color: "#32b697" }}>BUY $COINVERSE NOW</h5>
           <div
             style={{
               backgroundColor: "black",
-              height: "500px",
-              width: "500px",
+              height: "30vw",
+              width: "30vw",
               margin: "auto",
             }}
             className="mt-4"
           ></div>
         </Col>
-        <Col md={6}>
+        <Col lg={6} className="pt-3">
           <h5 style={{ color: "#32b697" }}>
             AN Financial Token working on Revolution to provide an next level
             security in wallet
@@ -32,8 +32,8 @@ const FirstPart = () => {
           <div
             style={{
               backgroundColor: "black",
-              height: "500px",
-              width: "500px",
+              height: "30vw",
+              width: "30vw",
               margin: "auto",
             }}
             className="mt-4"

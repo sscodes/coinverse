@@ -1,14 +1,15 @@
+import "bootstrap/dist/css/bootstrap.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import logo from "../../Assets/logo.jpeg";
-import certikLogo from "../../Assets/certik-logo.svg";
 import { AiOutlineEye } from "react-icons/ai";
+import certikLogo from "../../Assets/certik-logo.svg";
+import logo from "../../Assets/logo.jpeg";
 import "./Hero.css";
 
 const Hero = () => {
   return (
     <Container className="py-5" id="section 1">
       <Row>
-        <Col className="py-5" style={{ textAlign: "left" }}>
+        <Col lg={6} className="py-5" style={{ textAlign: "left" }}>
           <h1 style={{ color: "#32b697", fontSize: "4rem" }}>COINVERSE</h1>
           <h2 style={{ color: "white" }}>
             An financial Token working on Web 3.0!
@@ -25,7 +26,7 @@ const Hero = () => {
             rel="noreferrer"
           >
             <div className="d-grid gap-2">
-              <Button className="p-2">Buy On Uniswap</Button>
+              <Button className="p-2">Buy On Pankcakeswap</Button>
             </div>
           </a>
           <div
@@ -52,8 +53,8 @@ const Hero = () => {
             </Row>
           </div>
         </Col>
-        <Col>
-          <img src={logo} alt="" width={500} />
+        <Col lg={6}>
+          <img src={logo} alt="" width={500} className="img-fluid" />
         </Col>
       </Row>
     </Container>
