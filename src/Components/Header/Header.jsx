@@ -2,6 +2,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { Link, animateScroll } from "react-scroll";
 import logo from "../../Assets/logo.jpeg";
 import "./Header.css";
@@ -219,6 +220,15 @@ const Header = () => {
                   🇻🇳 Vietnamese
                 </NavDropdown.Item>
               </NavDropdown>
+              <NavLink
+                style={{ fontSize: "18px", marginRight: "7px" }}
+                activeClass="active"
+                to="/airdrop"
+                offset={-70}
+                duration={100}
+              >
+                <Button>Airdrop</Button>
+              </NavLink>
               <Link
                 style={{ fontSize: "18px" }}
                 activeClass="active"
