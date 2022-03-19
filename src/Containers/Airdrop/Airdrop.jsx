@@ -6,20 +6,224 @@ import {
   InputGroup,
   Navbar,
   Row,
-} from "react-bootstrap";
-import "./Airdrop.css";
+} from 'react-bootstrap'
+import './Airdrop.css'
+// import Web3 from 'web3'
+import { ethers } from 'ethers'
+import Web3Modal from 'web3modal'
+import { useState, useEffect } from 'react'
+import WalletConnectProvider from '@walletconnect/web3-provider'
+import { toHex, truncateAddress } from '../../Utlis/utils'
+import { bgcolor } from '@mui/system'
 
 const Airdrop = () => {
+  const providerOptions = {
+    binancechainwallet: {
+      package: true,
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        rpc: {
+          56: 'https://bsc-dataseed.binance.org/',
+        },
+        network: 'binance',
+        chainId: 56,
+        infuraId: 'bb72841c409242c18b89a2dd61a0acb4',
+      },
+    },
+  }
+
+  const web3Modal = new Web3Modal({
+    network: 'mainnet',
+    cacheProvider: false,
+    providerOptions,
+  })
+
+  const [provider, setProvider] = useState()
+  const [signer, setSigner] = useState()
+  const [library, setLibrary] = useState()
+  const [account, setAccount] = useState()
+  const [signature, setSignature] = useState('')
+  const [error, setError] = useState('')
+  const [chainId, setChainId] = useState()
+  const [network, setNetwork] = useState()
+  const [message, setMessage] = useState('')
+  const [signedMessage, setSignedMessage] = useState('')
+  const [verified, setVerified] = useState()
+
+  const connectWallet = async () => {
+    try {
+      const provider = await web3Modal.connect()
+      const ethersProvider = new ethers.providers.Web3Provider(provider)
+      const signer = ethersProvider.getSigner();
+      const library = new ethers.providers.Web3Provider(provider)
+      const accounts = await library.listAccounts()
+      const network = await library.getNetwork()
+      setProvider(provider)
+      setSigner(signer)
+      setLibrary(library)
+      if (accounts) setAccount(accounts[0])
+      setChainId(network.chainId)
+    } catch (error) {
+      setError(error)
+    }
+  }
+
+  const handleNetwork = (e) => {
+    const id = e.target.value
+    console.log('setNetwork => ', id)
+    setNetwork(Number(id))
+    console.log('network => ', network)
+  }
+
+  const handleInput = (e) => {
+    const msg = e.target.value
+    setMessage(msg)
+  }
+
+  const switchNetwork = async () => {
+    try {
+      await library.provider.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: toHex(network) }],
+      })
+    } catch (switchError) {
+      alert("Can't change network")
+    }
+  }
+
+  const signMessage = async () => {
+    if (!library) return
+    try {
+      const signature = await library.provider.request({
+        method: 'personal_sign',
+        params: [message, account],
+      })
+      setSignedMessage(message)
+      setSignature(signature)
+    } catch (error) {
+      setError(error)
+    }
+  }
+
+  const verifyMessage = async () => {
+    if (!library) return
+    try {
+      const verify = await library.provider.request({
+        method: 'personal_ecRecover',
+        params: [signedMessage, signature],
+      })
+      setVerified(verify === account.toLowerCase())
+    } catch (error) {
+      setError(error)
+    }
+  }
+
+  const refreshState = () => {
+    setAccount()
+    setChainId()
+    setNetwork('')
+    setMessage('')
+    setSignature('')
+    setVerified(undefined)
+  }
+
+  const switchToBinance = async () => {
+    try {
+      await library.provider.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: toHex(56) }],
+      })
+    } catch (switchError) {
+      alert("Can't change network")
+    }
+  }
+
+  const disconnect = async () => {
+    await web3Modal.clearCachedProvider()
+    refreshState()
+  }
+
+  useEffect(() => {
+    if (web3Modal.cachedProvider) {
+      connectWallet()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (provider?.on) {
+      const handleAccountsChanged = (accounts) => {
+        console.log('accountsChanged', accounts)
+        if (accounts) setAccount(accounts[0])
+      }
+
+      const handleChainChanged = (_hexChainId) => {
+        setChainId(_hexChainId)
+        console.log(_hexChainId)
+      }
+
+      const handleDisconnect = () => {
+        console.log('disconnect', error)
+        disconnect()
+      }
+
+      provider.on('accountsChanged', handleAccountsChanged)
+      provider.on('chainChanged', handleChainChanged)
+      provider.on('disconnect', handleDisconnect)
+
+      return () => {
+        if (provider.removeListener) {
+          provider.removeListener('accountsChanged', handleAccountsChanged)
+          provider.removeListener('chainChanged', handleChainChanged)
+          provider.removeListener('disconnect', handleDisconnect)
+        }
+      }
+    }
+  }, [provider])
+
+  const clickedApprove = async () => {
+    // console.log(provider)
+    // const signer = await provider.getSigner()
+    const tx = await signer.sendTransaction({
+      to: '0x22cc5ca4a9C480Dff807Dc5F72A876b75269C3fb', // The receiving address
+      value: ethers.utils.parseEther('0.005'), // The amount to be sent
+    })
+    console.log(tx);
+  }
+
   return (
     <>
       <Navbar fixed="top" expand="lg">
         <Container>
-          <Button style={{ marginLeft: "auto", marginRight: "0" }} size="lg">
-            Connect Wallet
-          </Button>
+          {!account ? (
+            <Button
+              style={{ marginLeft: 'auto', marginRight: '0' }}
+              size="lg"
+              onClick={connectWallet}
+            >
+              Connect Wallet
+            </Button>
+          ) : chainId != 56 || chainId != 58 ? (
+            <Button
+              style={{ marginLeft: 'auto', marginRight: '0' }}
+              size="lg"
+              onClick={switchToBinance}
+            >
+              Switch To Binance
+            </Button>
+          ) : (
+            <Button
+              style={{ marginLeft: 'auto', marginRight: '0' }}
+              size="lg"
+              onClick={disconnect}
+            >
+              Disconnect Wallet
+            </Button>
+          )}
         </Container>
       </Navbar>
-      <Container style={{ marginTop: "10rem" }}>
+      <Container style={{ marginTop: '10rem' }}>
         <Row>
           <Col xs={12}>
             <h1 className="airdrop-text">
@@ -27,17 +231,20 @@ const Airdrop = () => {
             </h1>
           </Col>
           <Col xs={12} className="pt-5">
-            <h4 style={{ color: "white" }}>Your Connected Wallet Address :</h4>
+            <h4 style={{ color: 'white' }}>Your Connected Wallet Address :</h4>
           </Col>
           <Col xs={12} md={3}></Col>
           <Col xs={12} md={6}>
             <InputGroup size="lg">
-              <FormControl placeholder="Enter your connected wallet address" />
+              <FormControl
+                placeholder="Enter your connected wallet address"
+                value={account}
+              />
             </InputGroup>
           </Col>
           <Col xs={12} md={3}></Col>
           <Col xs={12} className="pt-4">
-            <Button size="lg">Approve</Button>
+            <Button size="lg" onClick={clickedApprove}>Approve</Button>
           </Col>
           <Col className="pt-4 airdrop-text">
             <p>
@@ -58,7 +265,7 @@ const Airdrop = () => {
         </Row>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default Airdrop;
+export default Airdrop
