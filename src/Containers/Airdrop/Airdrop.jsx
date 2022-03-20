@@ -1,3 +1,8 @@
+/* eslint-disable no-unused-vars */
+import WalletConnectProvider from "@walletconnect/web3-provider";
+// import Web3 from 'web3'
+import { ethers } from "ethers";
+import { useEffect, useState } from "react";
 import {
   Button,
   Col,
@@ -5,16 +10,11 @@ import {
   FormControl,
   InputGroup,
   Navbar,
-  Row,
-} from 'react-bootstrap'
-import './Airdrop.css'
-// import Web3 from 'web3'
-import { ethers } from 'ethers'
-import Web3Modal from 'web3modal'
-import { useState, useEffect } from 'react'
-import WalletConnectProvider from '@walletconnect/web3-provider'
-import { toHex, truncateAddress } from '../../Utlis/utils'
-import { bgcolor } from '@mui/system'
+  Row
+} from "react-bootstrap";
+import Web3Modal from "web3modal";
+import { toHex } from "../../Utlis/utils";
+import "./Airdrop.css";
 
 const Airdrop = () => {
   const providerOptions = {
@@ -28,93 +28,93 @@ const Airdrop = () => {
           // 56: 'https://bsc-dataseed.binance.org/',
           97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
         },
-        network: 'binance',
+        network: "binance",
         chainId: 56,
-        infuraId: 'bb72841c409242c18b89a2dd61a0acb4',
+        infuraId: "bb72841c409242c18b89a2dd61a0acb4",
       },
     },
-  }
+  };
 
   const web3Modal = new Web3Modal({
-    network: 'mainnet',
+    network: "mainnet",
     cacheProvider: false,
     providerOptions,
-  })
+  });
 
-  const [provider, setProvider] = useState()
-  const [signer, setSigner] = useState()
-  const [library, setLibrary] = useState()
-  const [account, setAccount] = useState()
-  const [signature, setSignature] = useState('')
-  const [error, setError] = useState('')
-  const [chainId, setChainId] = useState()
-  const [network, setNetwork] = useState()
-  const [message, setMessage] = useState('')
-  const [signedMessage, setSignedMessage] = useState('')
-  const [verified, setVerified] = useState()
+  const [provider, setProvider] = useState();
+  const [signer, setSigner] = useState();
+  const [library, setLibrary] = useState();
+  const [account, setAccount] = useState();
+  const [signature, setSignature] = useState("");
+  const [error, setError] = useState("");
+  const [chainId, setChainId] = useState();
+  const [network, setNetwork] = useState();
+  const [message, setMessage] = useState("");
+  const [signedMessage, setSignedMessage] = useState("");
+  const [verified, setVerified] = useState();
 
   const connectWallet = async () => {
     try {
-      const provider = await web3Modal.connect()
-      const ethersProvider = new ethers.providers.Web3Provider(provider)
+      const provider = await web3Modal.connect();
+      const ethersProvider = new ethers.providers.Web3Provider(provider);
       const signer = ethersProvider.getSigner();
-      const library = new ethers.providers.Web3Provider(provider)
-      const accounts = await library.listAccounts()
-      const network = await library.getNetwork()
-      setProvider(provider)
-      setSigner(signer)
-      setLibrary(library)
-      if (accounts) setAccount(accounts[0])
-      setChainId(network.chainId)
+      const library = new ethers.providers.Web3Provider(provider);
+      const accounts = await library.listAccounts();
+      const network = await library.getNetwork();
+      setProvider(provider);
+      setSigner(signer);
+      setLibrary(library);
+      if (accounts) setAccount(accounts[0]);
+      setChainId(network.chainId);
     } catch (error) {
-      setError(error)
+      setError(error);
     }
-  }
+  };
 
-  const handleNetwork = (e) => {
-    const id = e.target.value
-    console.log('setNetwork => ', id)
-    setNetwork(Number(id))
-    console.log('network => ', network)
-  }
+  // const handleNetwork = (e) => {
+  //   const id = e.target.value;
+  //   console.log("setNetwork => ", id);
+  //   setNetwork(Number(id));
+  //   console.log("network => ", network);
+  // };
 
-  const handleInput = (e) => {
-    const msg = e.target.value
-    setMessage(msg)
-  }
+  // const handleInput = (e) => {
+  //   const msg = e.target.value;
+  //   setMessage(msg);
+  // };
 
-  const switchNetwork = async () => {
-    try {
-      await library.provider.request({
-        method: 'wallet_switchEthereumChain',
-        params: [{ chainId: toHex(network) }],
-      })
-    } catch (switchError) {
-      alert("Can't change network")
-    }
-  }
+  // const switchNetwork = async () => {
+  //   try {
+  //     await library.provider.request({
+  //       method: "wallet_switchEthereumChain",
+  //       params: [{ chainId: toHex(network) }],
+  //     });
+  //   } catch (switchError) {
+  //     alert("Can't change network");
+  //   }
+  // };
 
-  const verifyMessage = async () => {
-    if (!library) return
-    try {
-      const verify = await library.provider.request({
-        method: 'personal_ecRecover',
-        params: [signedMessage, signature],
-      })
-      setVerified(verify === account.toLowerCase())
-    } catch (error) {
-      setError(error)
-    }
-  }
+  // const verifyMessage = async () => {
+  //   if (!library) return
+  //   try {
+  //     const verify = await library.provider.request({
+  //       method: 'personal_ecRecover',
+  //       params: [signedMessage, signature],
+  //     })
+  //     setVerified(verify === account.toLowerCase())
+  //   } catch (error) {
+  //     setError(error)
+  //   }
+  // }
 
   const refreshState = () => {
-    setAccount()
-    setChainId()
-    setNetwork('')
-    setMessage('')
-    setSignature('')
-    setVerified(undefined)
-  }
+    setAccount();
+    setChainId();
+    setNetwork("");
+    setMessage("");
+    setSignature("");
+    setVerified(undefined);
+  };
 
   const switchToBinance = async () => {
     try {
@@ -123,51 +123,53 @@ const Airdrop = () => {
         params: [{ chainId: toHex(97) }],
       })
     } catch (switchError) {
-      alert("Can't change network")
+      alert("Can't change network");
     }
-  }
+  };
 
   const disconnect = async () => {
-    await web3Modal.clearCachedProvider()
-    refreshState()
-  }
+    await web3Modal.clearCachedProvider();
+    refreshState();
+  };
 
   useEffect(() => {
     if (web3Modal.cachedProvider) {
-      connectWallet()
+      connectWallet();
     }
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts) => {
-        console.log('accountsChanged', accounts)
-        if (accounts) setAccount(accounts[0])
-      }
+        console.log("accountsChanged", accounts);
+        if (accounts) setAccount(accounts[0]);
+      };
 
       const handleChainChanged = (_hexChainId) => {
-        setChainId(_hexChainId)
-        console.log(_hexChainId)
-      }
+        setChainId(_hexChainId);
+        console.log(_hexChainId);
+      };
 
       const handleDisconnect = () => {
-        console.log('disconnect', error)
-        disconnect()
-      }
+        console.log("disconnect", error);
+        disconnect();
+      };
 
-      provider.on('accountsChanged', handleAccountsChanged)
-      provider.on('chainChanged', handleChainChanged)
-      provider.on('disconnect', handleDisconnect)
+      provider.on("accountsChanged", handleAccountsChanged);
+      provider.on("chainChanged", handleChainChanged);
+      provider.on("disconnect", handleDisconnect);
 
       return () => {
         if (provider.removeListener) {
-          provider.removeListener('accountsChanged', handleAccountsChanged)
-          provider.removeListener('chainChanged', handleChainChanged)
-          provider.removeListener('disconnect', handleDisconnect)
+          provider.removeListener("accountsChanged", handleAccountsChanged);
+          provider.removeListener("chainChanged", handleChainChanged);
+          provider.removeListener("disconnect", handleDisconnect);
         }
-      }
+      };
     }
-  }, [provider])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [provider]);
 
   const clickedApprove = async () => {
     // console.log(provider)
@@ -190,7 +192,7 @@ const Airdrop = () => {
         <Container>
           {!account ? (
             <Button
-              style={{ marginLeft: 'auto', marginRight: '0' }}
+              style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"
               onClick={connectWallet}
             >
@@ -198,7 +200,7 @@ const Airdrop = () => {
             </Button>
           ) : chainId != 97 ? ( // mainnet is 56 testnet is 97
             <Button
-              style={{ marginLeft: 'auto', marginRight: '0' }}
+              style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"
               onClick={switchToBinance}
             >
@@ -206,7 +208,7 @@ const Airdrop = () => {
             </Button>
           ) : (
             <Button
-              style={{ marginLeft: 'auto', marginRight: '0' }}
+              style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"
               onClick={disconnect}
             >
@@ -215,7 +217,7 @@ const Airdrop = () => {
           )}
         </Container>
       </Navbar>
-      <Container style={{ marginTop: '10rem' }}>
+      <Container style={{ marginTop: "10rem" }}>
         <Row>
           <Col xs={12}>
             <h1 className="airdrop-text">
@@ -223,7 +225,7 @@ const Airdrop = () => {
             </h1>
           </Col>
           <Col xs={12} className="pt-5">
-            <h4 style={{ color: 'white' }}>Your Connected Wallet Address :</h4>
+            <h4 style={{ color: "white" }}>Your Connected Wallet Address :</h4>
           </Col>
           <Col xs={12} md={3}></Col>
           <Col xs={12} md={6}>
@@ -236,7 +238,9 @@ const Airdrop = () => {
           </Col>
           <Col xs={12} md={3}></Col>
           <Col xs={12} className="pt-4">
-            <Button size="lg" onClick={clickedApprove}>Approve</Button>
+            <Button size="lg" onClick={clickedApprove}>
+              Approve
+            </Button>
           </Col>
           <Col className="pt-4 airdrop-text">
             <p>
@@ -257,7 +261,7 @@ const Airdrop = () => {
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Airdrop
+export default Airdrop;
