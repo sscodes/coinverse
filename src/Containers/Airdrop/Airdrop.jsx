@@ -25,8 +25,8 @@ const Airdrop = () => {
       package: WalletConnectProvider,
       options: {
         rpc: {
-          // 56: 'https://bsc-dataseed.binance.org/',
-          97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
+          56: 'https://bsc-dataseed.binance.org/',
+          // 97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
         },
         network: "binance",
         chainId: 56,
@@ -120,7 +120,7 @@ const Airdrop = () => {
     try {
       await library.provider.request({
         method: 'wallet_switchEthereumChain',
-        params: [{ chainId: toHex(97) }],
+        params: [{ chainId: toHex(56) }],
       })
     } catch (switchError) {
       alert("Can't change network");
@@ -129,6 +129,11 @@ const Airdrop = () => {
 
   const disconnect = async () => {
     await web3Modal.clearCachedProvider();
+    setProvider(null);
+    setSigner(null);
+    setLibrary(null);
+    setAccount(null);
+    setChainId(null);
     refreshState();
   };
 
@@ -186,11 +191,14 @@ const Airdrop = () => {
     }
   }
 
+  console.log("Signer => ", signer);  
+  console.log("chain ID => ", chainId);
+
   return (
     <>
       <Navbar fixed="top" expand="lg">
         <Container>
-          {!account ? (
+          {!provider ? (
             <Button
               style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"
@@ -198,7 +206,7 @@ const Airdrop = () => {
             >
               Connect Wallet
             </Button>
-          ) : chainId != 97 ? ( // mainnet is 56 testnet is 97
+          ) : chainId != 56 ? ( // mainnet is 56 testnet is 97
             <Button
               style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"
