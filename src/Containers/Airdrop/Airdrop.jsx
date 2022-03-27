@@ -206,7 +206,7 @@ const Airdrop = () => {
             >
               Connect Wallet
             </Button>
-          ) : chainId != 56 ? ( // mainnet is 56 testnet is 97
+          ) : chainId !== 56 ? ( // mainnet is 56 testnet is 97
             <Button
               style={{ marginLeft: "auto", marginRight: "0" }}
               size="lg"

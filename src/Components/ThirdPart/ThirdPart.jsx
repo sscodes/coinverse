@@ -24,10 +24,10 @@ const ThirdPart = () => {
           <Row>
             <Col xs={12}>
               <Row className="mt-5">
-                <Col xs={1}>
+                <Col xs={2} md={1}>
                   <img src={pic1} alt="" width={40} />
                 </Col>
-                <Col xs={11}>
+                <Col xs={10} md={11}>
                   <p>
                     <b style={{ color: "white" }}>Coinverse swap:</b> is
                     conceptualized to address the lack of user-friendly tools
@@ -41,10 +41,10 @@ const ThirdPart = () => {
             </Col>
             <Col xs={12}>
               <Row className="mt-2">
-                <Col xs={1}>
+                <Col xs={2} md={1}>
                   <img src={pic1} alt="" width={40} />
                 </Col>
-                <Col xs={11}>
+                <Col xs={10} md={11}>
                   <p>
                     {" "}
                     <b style={{ color: "white" }}>Coinverse blockchain:</b>{" "}
@@ -59,10 +59,10 @@ const ThirdPart = () => {
             </Col>
             <Col xs={12}>
               <Row className="mt-2">
-                <Col xs={1}>
+                <Col xs={2} md={1}>
                   <img src={pic1} alt="" width={40} />
                 </Col>
-                <Col xs={11}>
+                <Col xs={10} md={11}>
                   <p>
                     <b style={{ color: "white" }}>Coinverse:</b> Enter the
                     Coinverse virtual reality Metaverse. When the user arrives
@@ -76,10 +76,10 @@ const ThirdPart = () => {
             </Col>
             <Col xs={12}>
               <Row className="mt-2">
-                <Col xs={1}>
+                <Col xs={2} md={1}>
                   <img src={pic1} alt="" width={40} />
                 </Col>
-                <Col xs={11}>
+                <Col xs={10} md={11}>
                   <p>
                     <b style={{ color: "white" }}>Coinverse Wallet:</b> Two
                     Factor Authentication (2FA) Wallet will require a code
